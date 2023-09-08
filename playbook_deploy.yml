@@ -9,9 +9,10 @@
         state: latest
 
     - name: Clonage du dépot github contenant l'application Gatsby
-      git:
+      ansible.builtin.git:
         repo: https://github.com/gatsbyjs/gatsby-starter-default
         dest: ./gatsby-cli
+        update: yes #met à jour le dépôt si existant
       notify:
         - On peut maintenant copier l'application gatsby
     
