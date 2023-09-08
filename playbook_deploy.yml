@@ -21,7 +21,7 @@
     
     - name: Installation des dépendances
       ansible.builtin.command:
-        cmd: npm Install
+        cmd: npm install
       args:
         chdir: ./gatsby-cli
 
