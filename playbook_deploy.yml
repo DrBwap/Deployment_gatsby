@@ -18,13 +18,10 @@
         repo: https://github.com/gatsbyjs/gatsby-starter-default
         dest: ./gatsby-cli
         update: yes #met à jour le dépôt si existant
-      notify:
-        - On peut maintenant copier l'application gatsby
     
     - name: Construction de l'application gatsby
       ansible.builtin.npm:
         path: ./gatsby-cli
         args: run build #effectue la commande npm run build
-      notify:
-        - l'application de gatsby a été construite.
+
     
