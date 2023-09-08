@@ -23,8 +23,8 @@
       ansible.builtin.command:
         cmd: npm Install
       args:
-      chdir: ./gatsby-cli
-      
+        chdir: ./gatsby-cli
+
     - name: Construction de l'application gatsby
       ansible.builtin.command:
         cmd: npm run build
