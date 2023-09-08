@@ -22,6 +22,6 @@
     - name: Construction de l'application gatsby
       ansible.builtin.npm:
         path: ./gatsby-cli
-        args: run build #effectue la commande npm run build
+        name: run build #effectue la commande npm run build
 
     
