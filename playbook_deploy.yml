@@ -19,9 +19,15 @@
         dest: ./gatsby-cli
         update: yes #met à jour le dépôt si existant
     
+    - name: Installation des dépendances
+      ansible.builtin.command:
+        cmd: npm Install
+      args:
+      chdir: ./gatsby-cli
+      
     - name: Construction de l'application gatsby
       ansible.builtin.command:
-        cmd: ["npm", "run", "build"]
+        cmd: npm run build
       args:
         chdir: ./gatsby-cli
 
