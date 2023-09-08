@@ -1,0 +1,24 @@
+---
+- name: Deploiement de gatsby sur un serveur Apache 
+  hosts: web_servers  #cibles où l'application Gatsby sera déployée
+  become: true
+  tasks:
+    - name: Install the latest version of Apache
+      ansible.builtin.yum:
+        name: httpd
+        state: latest
+
+    - name: Clonage du dépot github contenant l'application Gatsby
+      git:
+        repo: https://github.com/gatsbyjs/gatsby-starter-default
+        dest: ./gatsby-cli
+      notify:
+        - On peut maintenant copier l'application gatsby
+    
+    - name: Construction de l'application gatsby
+      ansible.builtin.npm:
+        path: ./gatsby-cli
+        args: run build #effectue la commande npm run build
+      notify:
+        - l'application de gatsby a été construite.
+    
