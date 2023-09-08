@@ -8,6 +8,11 @@
         name: httpd
         state: latest
 
+    - name: Installation de Git
+      ansible.builtin.package:
+        name: git
+        state: present
+
     - name: Clonage du dépot github contenant l'application Gatsby
       ansible.builtin.git:
         repo: https://github.com/gatsbyjs/gatsby-starter-default
