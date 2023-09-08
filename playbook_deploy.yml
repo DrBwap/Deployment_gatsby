@@ -20,8 +20,9 @@
         update: yes #met à jour le dépôt si existant
     
     - name: Construction de l'application gatsby
-      ansible.builtin.npm:
-        path: ./gatsby-cli
-        args: "run build" #effectue la commande npm run build
+      ansible.builtin.command:
+        cmd: npm run build
+      args:
+        chdir: ./gatsby-cli
 
     
